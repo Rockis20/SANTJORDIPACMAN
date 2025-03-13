@@ -40,6 +40,8 @@ document.addEventListener("DOMContentLoaded", function(){
      0, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 0,
      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,]
 
+    let squares = [];
+
     //CREATED BOARD
     function createBoard(){
         for(let i=0; i < layout.length; i++){
@@ -56,9 +58,36 @@ document.addEventListener("DOMContentLoaded", function(){
             square.classList.add("white")
             }
             grid.appendChild(square);
+            squares.push(square)
         } 
         }
-        createBoard()
+        createBoard();
+        console.log(squares)
+
+        let posicioPrincep = "30";
+        squares[posicioPrincep].classList.add("princep");
+
+        function movePrincep(e){
+            squares[posicioPrincep].classList.remove("princep");
+            switch(e.key){
+                case 'ArrowLeft':
+                    posicioPrincep -= 1
+                    break;
+                case 'ArrowRight':
+                    posicioPrincep += 1
+                    break;
+                case 'ArrowUp':
+                    posicioPrincep -= 28
+                    break;
+                case 'ArrowDown':
+                    posicioPrincep += 28
+                    break;
+            }
+            squares[posicioPrincep].classList.add("princep");
+
+        }
+
+        document.addEventListener('keyup', movePrincep)
     
     })
 

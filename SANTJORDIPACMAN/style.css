@@ -1,6 +1,6 @@
 .grid{
-    width: 1120px;
-    height: 1120px;
+    width: 840px;
+    height: 840px;
     border: solid black;
     display: flex;
     flex-wrap: wrap;
@@ -8,14 +8,13 @@
 }
 
 .grid div{
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     box-sizing: border-box;
 }
 
 body{
     display: block;
-    
 }
 
 .red{
@@ -32,4 +31,29 @@ body{
 }
 .white{
     background-color: white;
+}
+
+.princep{
+    background-image: url(./img/pngtree-knight-medieval-png-image_6509194.jpg);
+    background-size: cover;
+
+}
+.drac1{
+    background-image: url(./img/Dracgroc_esquerra.png)
+}
+.drac2{
+    background-image: url(./img/png-clipart-dragonriders-of-pern-dragons-dragon-rider-dragon-dragon-fictional-character\ \(1\).png);
+
+}
+.drac3{
+    background-image: url(./img/png-clipart-dragon-drawing-mascot-cartoon-digital-art-dragon-mascot-purple-dragon.png);
+
+}
+.drac4{
+    background-image: url(./img/png-transparent-red-dragon-illustration-dungeons-dragons-tiamat-monster-manual-chromatic-dragon-dragon-game-dragon-fictional-character-thumbnail\ \(1\).png);
+
+}
+.drac-asustat{
+    background-image: url(./img/44490051-una-ilustración-de-dibujos-animados-de-un-dragón-que-parece-asustada.png);
+
 }
