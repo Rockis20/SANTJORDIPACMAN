@@ -31,9 +31,9 @@ document.addEventListener("DOMContentLoaded", function(){
         1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1,
         1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1,
         1, 0, 1, 4, 4, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 4, 4, 1, 0, 1,
-        1, 0, 1, 1, 4, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 1, 1, 0, 1,
-        1, 3, 0, 1, 4, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 4, 1, 0, 3, 1,
-        1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1,
+        1, 0, 1, 4, 4, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 4, 1, 0, 1,
+        1, 3, 1, 4, 4, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 4, 4, 1, 3, 1,
+        1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1,
         1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1,
         1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1,
         1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1,
@@ -47,6 +47,9 @@ document.addEventListener("DOMContentLoaded", function(){
     function createBoard(){
         for(let i=0; i < layout.length; i++){
             const square = document.createElement('div')
+            square.id = i
+    
+
             if(layout[i] == 0)  {
             square.classList.add("pink")
             }else if(layout[i] == 1){
@@ -74,18 +77,23 @@ document.addEventListener("DOMContentLoaded", function(){
                 case 'ArrowLeft': 
                 if(
                     !squares[posicioPrincep-1].classList.contains('green') &&
-                    !squares[posicioPrincep-1].classList.contains('blue')
-                ){
-                    posicioPrincep -= 1
+                    !squares[posicioPrincep-1].classList.contains('blue')){
+                        posicioPrincep -= 1
+                    }
+                
+                if(squares[posicioPrincep - 1 ] === squares[363]){
+                    posicioPrincep = 391
                 }
                 break;
 
                 case 'ArrowRight': 
                 if(
                     !squares[posicioPrincep+1].classList.contains('green') &&
-                    !squares[posicioPrincep+1].classList.contains('blue')
-                ){
-                    posicioPrincep += 1
+                    !squares[posicioPrincep+1].classList.contains('blue')){
+                        posicioPrincep += 1
+                    }
+                if(squares[posicioPrincep + 1 ] === squares[392]){
+                        posicioPrincep = 364
                 }
                 break;
 
@@ -111,6 +119,7 @@ document.addEventListener("DOMContentLoaded", function(){
         }
 
         document.addEventListener('keyup', movePrincep)
+
     
     })
 
