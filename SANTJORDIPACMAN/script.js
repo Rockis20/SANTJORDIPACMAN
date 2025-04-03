@@ -116,9 +116,35 @@ document.addEventListener("DOMContentLoaded", function(){
             }
             squares[posicioPrincep].classList.add("princep");
 
+            petalAgafar()
+            rosaAgafada()
+            //checkForWin()
+            //checkForGameOver()
+
         }
 
         document.addEventListener('keyup', movePrincep)
+
+        function petalAgafar(){
+
+            if(squares[posicioPrincep].classList.contains('petal')){
+                score ++ 
+                scoreDisplay.innerHTML = score
+                squares[posicioPrincep].classList.remove('petal')
+            }
+
+
+        }
+
+        function rosaAgafada(){
+
+            if(squares[posicioPrincep].classList.contains('rosa')){
+                score +=10 
+                scoreDisplay.innerHTML = score
+                squares[posicioPrincep].classList.remove('rosa')
+            }
+
+        }
 
     
     })
