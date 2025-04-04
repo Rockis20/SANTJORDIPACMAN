@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function(){
     const scoreDisplay = document.getElementById("score");
+    console.log(scoreDisplay)
     const width = 28;
     let score = 0;
     const grid = document.querySelector(".grid")
@@ -21,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function(){
         1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1,
         1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1,
         1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1,
-        1, 4, 4, 4, 4, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 4, 4, 4, 4, 1,
+        1, 4, 4, 4, 4, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 4, 4, 4, 1,
         1, 4, 4, 4, 4, 1, 0, 1, 1, 0, 1, 1, 1, 2, 2, 1, 1, 1, 0, 1, 1, 0, 1, 4, 4, 4, 4, 1,
         1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 2, 2, 2, 2, 2, 2, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 2, 2, 2, 2, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -127,10 +128,10 @@ document.addEventListener("DOMContentLoaded", function(){
 
         function petalAgafar(){
 
-            if(squares[posicioPrincep].classList.contains('petal')){
+            if(squares[posicioPrincep].classList.contains('pink')){
                 score ++ 
                 scoreDisplay.innerHTML = score
-                squares[posicioPrincep].classList.remove('petal')
+                squares[posicioPrincep].classList.remove('pink')
             }
 
 
@@ -145,6 +146,28 @@ document.addEventListener("DOMContentLoaded", function(){
             }
 
         }
+
+
+        class Drac {
+            constructor(className, startIndex, speed){
+                this.className = className
+                this.startIndex = startIndex
+                this.speed = speed
+                this.currentIndex = startIndex
+                this.isScared = false
+                this.timerId = NaN
+            }
+
+
+        }
+
+        const dracs = [
+            new Drac('drac1', 348, 250),
+            new Drac('drac2', 403, 400),
+            new Drac('drac3', 378, 300),
+            new Drac('drac4', 406, 500)
+        ]
+        
 
     
     })

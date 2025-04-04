@@ -22,7 +22,7 @@ body{
 }
 .pink{
     background-color: pink;
-    background-image: url(./img/Captura\ de\ pantalla\ 2025-04-03\ 065137.png);
+    content: url(./img/Captura\ de\ pantalla\ 2025-04-04\ 075750.png);
     background-size: cover;
 }
 .green{
@@ -36,12 +36,12 @@ body{
 }
 
 .princep{
-    background-image: url(./img/pngtree-knight-medieval-png-image_6509194-removebg-preview.png);
+    content: url(./img/pngtree-knight-medieval-png-image_6509194-removebg-preview.png);
     background-size: cover;
 
 }
 .drac1{
-    background-image: url(./img/Dracgroc_esquerra.png)
+    content: url(./img/Dracgroc_esquerra.png)
 }
 .drac2{
     background-image: url(./img/png-clipart-dragonriders-of-pern-dragons-dragon-rider-dragon-dragon-fictional-character\ \(1\).png);
@@ -58,8 +58,5 @@ body{
 .drac-asustat{
     background-image: url(./img/44490051-una-ilustración-de-dibujos-animados-de-un-dragón-que-parece-asustada.png);
 
-}
-.petal{
-    
 }
 
