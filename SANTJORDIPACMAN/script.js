@@ -167,8 +167,25 @@ document.addEventListener("DOMContentLoaded", function(){
             new Drac('drac3', 378, 300),
             new Drac('drac4', 406, 500)
         ]
+
+        dracs.forEach(drac=>squares[drac.currentIndex].classList.add(drac.className, 'drac'))
+
+        drac.forEach(drac=>moveDrac(drac))
+
+        function moveDrac (drac){
+            const directions = [-1,1, width, -width]
+            let direction = directions[Math.floor(Math.random()*directions.length)]
+            
+            if(
+                !squares[drac.currentIndex+direction].classListcontains('green') &&
+            ){
+
+            }
+
+        }
         
 
     
     })
+    
 
