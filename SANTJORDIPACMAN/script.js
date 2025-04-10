@@ -170,20 +170,40 @@ document.addEventListener("DOMContentLoaded", function(){
 
         dracs.forEach(drac=>squares[drac.currentIndex].classList.add(drac.className, 'drac'))
 
-        drac.forEach(drac=>moveDrac(drac))
+        dracs.forEach(drac=>moveDrac(drac))
 
         function moveDrac (drac){
             const directions = [-1,1, width, -width]
             let direction = directions[Math.floor(Math.random()*directions.length)]
-            
-            if(
-                !squares[drac.currentIndex+direction].classListcontains('green') &&
-            ){
 
-            }
+            drac.timerId = setInterval(function(){
+               if(
+                   !squares[drac.currentIndex+direction].classList.contains('green') && 
+                   !squares[drac.currentIndex+direction].classList.contains('drac')
+               ){
+                    squares[drac.currentIndex].classList.remove(drac.className, 'drac', 'drac-espantat')
+                    drac.currentIndex+=direction
+                    squares[drac.currentIndex].classList.add(drac.className, 'drac')
+
+                } else direction = directions[Math.floor(Math.random()*directions.length)]
+
+                if(drac.isScared){
+                squares[drac.currentIndex].classList.add(drac.className, 'drac')   
+                }
+
+                if(drac.isScared && squares[drac.currentIndex].classList.contains('princep')){
+                    score+=100
+                    scoreDisplay.innerHTML = score
+                    squares[drac.currentIndex].classList.remove(drac.className, 'drac', 'drac-espantat')
+                    drac.currentIndex=drac.startIndex
+                    drac.isScared=false
+                    squares[drac.currentIndex].classList.add(drac.className, 'drac')
+                }
+            
+            },drac.speed)
+
 
         }
-        
 
     
     })

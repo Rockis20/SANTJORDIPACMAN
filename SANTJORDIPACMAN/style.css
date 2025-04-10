@@ -19,20 +19,22 @@ body{
 
 .red{
     background-color: red;
+    content: url(./img/png-clipart-rose-red-rose.png);
 }
 .pink{
-    background-color: pink;
     content: url(./img/Captura\ de\ pantalla\ 2025-04-04\ 075750.png);
     background-size: cover;
 }
 .green{
     background-color: green;
+    
+    content: url(./img/19a1f56d08668fcbbd78b8b33cd951e7.jpg);
 }
 .blue{
     background-color: blue;
 }
 .white{
-    background-color: white;
+    content: url(./img/s-l400.jpg);
 }
 
 .princep{
@@ -41,22 +43,22 @@ body{
 
 }
 .drac1{
-    content: url(./img/Dracgroc_esquerra.png)
+    content: url(./img/dragon1.png)
 }
 .drac2{
-    background-image: url(./img/png-clipart-dragonriders-of-pern-dragons-dragon-rider-dragon-dragon-fictional-character\ \(1\).png);
+    content: url(./img/dragon2.png);
 
 }
 .drac3{
-    background-image: url(./img/png-clipart-dragon-drawing-mascot-cartoon-digital-art-dragon-mascot-purple-dragon.png);
+    content: url(./img/dragon3.png);
 
 }
 .drac4{
-    background-image: url(./img/png-transparent-red-dragon-illustration-dungeons-dragons-tiamat-monster-manual-chromatic-dragon-dragon-game-dragon-fictional-character-thumbnail\ \(1\).png);
+    content: url(./img/dragon4.png);
 
 }
-.drac-asustat{
-    background-image: url(./img/44490051-una-ilustración-de-dibujos-animados-de-un-dragón-que-parece-asustada.png);
+.drac-espantat{
+    content: url(./img/44490051-una-ilustración-de-dibujos-animados-de-un-dragón-que-parece-asustada.png);
 
 }
 
