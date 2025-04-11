@@ -119,8 +119,8 @@ document.addEventListener("DOMContentLoaded", function(){
 
             petalAgafar()
             rosaAgafada()
-            //checkForWin()
-            //checkForGameOver()
+            checkForWin()
+            checkForGameOver()
 
         }
 
@@ -143,8 +143,14 @@ document.addEventListener("DOMContentLoaded", function(){
                 score +=10 
                 scoreDisplay.innerHTML = score
                 squares[posicioPrincep].classList.remove('rosa')
+                espantaDracs(true)
+                setTimeout(()=> espantaDracs(false), 10000)
+                
             }
+        }
 
+        function espantaDracs(scaredDrac){
+            dracs.forEach(drac=>drac.isScared=scaredDrac)
         }
 
 
@@ -188,7 +194,7 @@ document.addEventListener("DOMContentLoaded", function(){
                 } else direction = directions[Math.floor(Math.random()*directions.length)]
 
                 if(drac.isScared){
-                squares[drac.currentIndex].classList.add(drac.className, 'drac')   
+                squares[drac.currentIndex].classList.add(drac.className, 'drac-espantat')   
                 }
 
                 if(drac.isScared && squares[drac.currentIndex].classList.contains('princep')){
@@ -199,13 +205,38 @@ document.addEventListener("DOMContentLoaded", function(){
                     drac.isScared=false
                     squares[drac.currentIndex].classList.add(drac.className, 'drac')
                 }
-            
+
+                checkForGameOver()
+
             },drac.speed)
 
 
         }
 
-    
+        function checkForGameOver(){
+
+            if(
+                squares[posicioPrincep].classList.contains('drac') &&
+                !squares[posicioPrincep].classList.contains('drac-espantat')
+            ){
+                dracs.forEach(drac=>clearInterval(drac.timerId))
+                document.removeEventListener('keyup', movePrincep)
+                setTimeout(function(){alert('GAME OVER')}, 500)
+            }
+        }
+
+        function checkForWin(){
+
+            if(score>=50){
+
+                dracs.forEach(drac=>clearInterval(drac.timerId))
+                document.removeEventListener('keyup', movePrincep)
+                setTimeout(function(){alert('YOU HAVE WON')}, 500)
+            }
+            
+        }
+
+        console.log(dracs)
     })
     
 
